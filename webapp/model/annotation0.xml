@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZMM_SNP_MATERIAL_COPY_SRV" xml:lang="pt" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+
+			<Annotations Target="ZMM_SNP_MATERIAL_COPY_SRV.MaterialCopy"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				
+				<Annotation Term="com.sap.vocabularies.UI.v1.SelectionFields">
+			      <Collection>
+			      	<PropertyPath>Matnr</PropertyPath>
+			      </Collection>
+			    </Annotation>
+				
+				<Annotation Term="com.sap.vocabularies.UI.v1.LineItem">
+					<Collection>
+						<Record Type="com.sap.vocabularies.UI.v1.DataField">
+							<PropertyValue Property="Value" Path="Matnr" />
+							<Annotation Term="UI.Importance" EnumMember="UI.Importance/High"/>
+						</Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                            <PropertyValue Property="Value" Path="Maktx" />
+                            <Annotation Term="UI.Importance" EnumMember="UI.Importance/High"/>
+                        </Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                            <PropertyValue Property="Value" Path="Sistema" />
+                            <Annotation Term="UI.Importance" EnumMember="UI.Importance/High"/>
+                        </Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                            <PropertyValue Property="Value" Path="AgrupamentoComercial" />
+                            <Annotation Term="UI.Importance" EnumMember="UI.Importance/High"/>
+                        </Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                            <PropertyValue Property="Value" Path="FerramentaExclusivaCliente" />
+                            <Annotation Term="UI.Importance" EnumMember="UI.Importance/High"/>
+                        </Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                            <PropertyValue Property="Value" Path="Mercado" />
+                            <Annotation Term="UI.Importance" EnumMember="UI.Importance/High"/>
+                        </Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                            <PropertyValue Property="Value" Path="TipodeAcabamento" />
+                            <Annotation Term="UI.Importance" EnumMember="UI.Importance/High"/>
+                        </Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                            <PropertyValue Property="Value" Path="Ferramenta" />
+                            <Annotation Term="UI.Importance" EnumMember="UI.Importance/High"/>
+                        </Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                            <PropertyValue Property="Value" Path="Tamanho" />
+                            <Annotation Term="UI.Importance" EnumMember="UI.Importance/High"/>
+                        </Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                            <PropertyValue Property="Value" Path="Liga" />
+                            <Annotation Term="UI.Importance" EnumMember="UI.Importance/High"/>
+                        </Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                            <PropertyValue Property="Value" Path="Tempera" />
+                            <Annotation Term="UI.Importance" EnumMember="UI.Importance/High"/>
+                        </Record>
+                        <Record Type="com.sap.vocabularies.UI.v1.DataField">
+                            <PropertyValue Property="Value" Path="Acabamento" />
+                            <Annotation Term="UI.Importance" EnumMember="UI.Importance/High"/>
+                        </Record>                        
+					</Collection>
+				</Annotation>
+			</Annotations>
+
+            <EntityType Name="MaterialCopy" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Matnr"/>
+                </Key>
+                <Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Material" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="Maktx" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Descrição" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="Sistema" Type="Edm.String" MaxLength="26" sap:unicode="false" sap:label="Sistema" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="AgrupamentoComercial" Type="Edm.String" MaxLength="13" sap:unicode="false" sap:label="Agrupamento Comercial" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="FerramentaExclusivaCliente" Type="Edm.String" MaxLength="3" sap:unicode="false" sap:label="Ferramenta Exclusiva do Cliente" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="Mercado" Type="Edm.String" MaxLength="23" sap:unicode="false" sap:label="Mercado" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="TipodeAcabamento" Type="Edm.String" MaxLength="9" sap:unicode="false" sap:label="Tipo de Acabamento" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="Ferramenta" Type="Edm.String" MaxLength="6" sap:unicode="false" sap:label="Ferramenta" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="Tamanho" Type="Edm.String" MaxLength="5" sap:unicode="false" sap:label="Tamanho" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="Liga" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:label="Liga" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="Tempera" Type="Edm.String" MaxLength="2" sap:unicode="false" sap:label="Têmpera" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="Acabamento" Type="Edm.String" MaxLength="7" sap:unicode="false" sap:label="Acabamento" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="MatnrOld" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Material Antigo" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityContainer Name="ZMM_SNP_MATERIAL_COPY_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="MaterialCopySet" EntityType="ZMM_SNP_MATERIAL_COPY_SRV.MaterialCopy" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+            </EntityContainer>
+            <atom:link rel="self" href="http://perfilcidev.perfilaluminio.com.br:8000/sap/opu/odata/sap/ZMM_SNP_MATERIAL_COPY_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://perfilcidev.perfilaluminio.com.br:8000/sap/opu/odata/sap/ZMM_SNP_MATERIAL_COPY_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

@@ -1,0 +1,56 @@
+<mvc:View
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+	xmlns:smartTable="sap.ui.comp.smarttable"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+	controllerName="materialcopy.controller.Worklist"
+	height="100%">
+
+		<!-- use this to make the table occupy the available screen height -->
+		<VBox fitContainer="true">
+			<smartFilterBar:SmartFilterBar id="smartFilterBar" 
+										   entitySet="MaterialCopySet" 
+										   persistencyKey="SmartFilter_Explored" 
+										   enableBasicSearch="false"
+										   showMessages="false" 
+										   useDateRangeType="true"
+										   initialise="onInitSmartFilter"
+										   initialized="onAfterInitSmartFilter">
+
+				<!-- layout data used to make the table growing but the filter bar fixed -->
+				<smartFilterBar:layoutData>
+					<FlexItemData shrinkFactor="0"/>
+				</smartFilterBar:layoutData>
+			</smartFilterBar:SmartFilterBar>
+			<smartTable:SmartTable id="LineItemsSmartTable" 
+								   entitySet="MaterialCopySet" 
+								   smartFilterId="smartFilterBar" 
+								   tableType="Table" 
+								   useExportToExcel="false" 
+								   useVariantManagement="true" 
+								   useTablePersonalisation="true" 
+								   header="{i18n>titleTable}" 
+								   showRowCount="true" 
+								   persistencyKey="SmartTableAnalytical_Explored" 
+								   enableAutoBinding="false" 
+								   class="sapUiResponsiveContentPadding">
+				<smartTable:customToolbar>
+					<OverflowToolbar design="Transparent">
+						<ToolbarSpacer/>
+						
+						<Button icon="sap-icon://list"
+									text="{i18n>labelMenuButtonExportRelatorio}"
+									type="Transparent">
+						</Button>
+											   
+					</OverflowToolbar>
+				</smartTable:customToolbar>
+				<!-- layout data used to make the table growing but the filter bar fixed -->
+				<smartTable:layoutData>
+					<FlexItemData growFactor="1" baseSize="0%"/>
+				</smartTable:layoutData>
+			</smartTable:SmartTable>
+		</VBox>
+</mvc:View>
